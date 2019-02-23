@@ -6,7 +6,7 @@
 /*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 09:57:51 by phtruong          #+#    #+#             */
-/*   Updated: 2019/02/21 20:22:05 by phtruong         ###   ########.fr       */
+/*   Updated: 2019/02/22 20:17:26 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,37 @@
 */
 
 /*
-** use this to count length of array.
-** int count = 0;
-**char *ptr = s;
-**while((ptr = strchr(ptr, ' ')) != NULL) {
-**count++;
-**ptr++;
-**}
+**
 */
+
 #include "libft.h"
+
+char	**ft_strsplit(char const *s, char c)
+{
+	char	**s_array;
+	char	*pc;
+	char	*s_copy;
+	char	*ps_copy;
+	int		w_count;
+	int		x;
+	int		w_len;
+
+	x = 0;
+	w_len = 0;
+	pc = &c;
+	s_copy = ft_strdup(s);
+	ps_copy = ft_strdup(s_copy);
+	w_count = ft_strtok_ntokens(s, pc);
+	//printf("w_count value: %d\n", w_count);
+	s_array = (char **)ft_memalloc(w_count * sizeof(char *));
+	while (x < w_count)
+	{
+		w_len = (int)ft_strlen(ft_strtok_r(ps_copy, pc, &ps_copy));
+		printf("w_len value: %d\n", w_len);
+		s_array[x] = ft_strnew(w_len);
+		s_array[x] = ft_strtok_r((char*)s_copy, pc, (char **)&s_copy);
+		printf("s_array[x]: %d, %s", x, s_array[x]);
+		x++;
+	}
+	return (s_array);
+}

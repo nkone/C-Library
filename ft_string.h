@@ -6,7 +6,7 @@
 /*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 14:29:39 by phtruong          #+#    #+#             */
-/*   Updated: 2019/02/21 20:44:33 by phtruong         ###   ########.fr       */
+/*   Updated: 2019/02/22 19:59:23 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,8 @@ char			*ft_itoa(int n);
 size_t			ft_strspn(const char *s1, const char *s2);
 size_t			ft_strcspn(const char *s, const char *charset);
 char			*ft_strtok(char *str, const char *sep);
+char			*ft_strtok_r(char *s, char const *delim, char **save_ps);
+int				ft_strtok_ntokens(char const *str, char const *c);
+int				ft_strchr_nchr(char const *str, int c);
 
 #endif
