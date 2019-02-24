@@ -6,7 +6,7 @@
 /*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 13:39:18 by phtruong          #+#    #+#             */
-/*   Updated: 2019/02/14 13:31:35 by phtruong         ###   ########.fr       */
+/*   Updated: 2019/02/22 13:43:49 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,9 @@ void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char *dest;
 
+	dest = (unsigned char *)b;
 	if (len)
-	{
-		dest = (unsigned char *)b;
 		while (len--)
 			*dest++ = c;
-	}
 	return (b);
 }

@@ -6,7 +6,7 @@
 /*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 09:57:51 by phtruong          #+#    #+#             */
-/*   Updated: 2019/02/22 20:17:26 by phtruong         ###   ########.fr       */
+/*   Updated: 2019/02/23 21:17:53 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,29 +31,27 @@
 char	**ft_strsplit(char const *s, char c)
 {
 	char	**s_array;
-	char	*pc;
 	char	*s_copy;
-	char	*ps_copy;
 	int		w_count;
-	int		x;
-	int		w_len;
+	char	*token;
+	int		i;
 
-	x = 0;
-	w_len = 0;
-	pc = &c;
-	s_copy = ft_strdup(s);
-	ps_copy = ft_strdup(s_copy);
-	w_count = ft_strtok_ntokens(s, pc);
-	//printf("w_count value: %d\n", w_count);
-	s_array = (char **)ft_memalloc(w_count * sizeof(char *));
-	while (x < w_count)
+	if (!s)
+		return (NULL);
+	w_count = ft_strtok_ntokens(s, &c);
+	s_copy = (char *)malloc(ft_strlen(s)*sizeof(char *));
+	if(!(s_array = (char **)malloc(w_count*sizeof(char *) + 1)))
+		return (NULL);
+	ft_strcpy(s_copy, s);
+	token = ft_strtok_r(s_copy, &c, &s_copy);
+	i = 0;
+	while (i < w_count && token != NULL)
 	{
-		w_len = (int)ft_strlen(ft_strtok_r(ps_copy, pc, &ps_copy));
-		printf("w_len value: %d\n", w_len);
-		s_array[x] = ft_strnew(w_len);
-		s_array[x] = ft_strtok_r((char*)s_copy, pc, (char **)&s_copy);
-		printf("s_array[x]: %d, %s", x, s_array[x]);
-		x++;
+		s_array[i] = (char *)malloc(ft_strlen(token)*sizeof(char *));
+		ft_strcpy(s_array[i], token);
+		token = ft_strtok_r(s_copy, &c, &s_copy);
+		i++;
 	}
+	s_array[i] = NULL;
 	return (s_array);
 }

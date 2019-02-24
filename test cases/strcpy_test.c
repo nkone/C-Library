@@ -6,7 +6,7 @@
 /*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 15:06:38 by phtruong          #+#    #+#             */
-/*   Updated: 2019/02/14 10:44:57 by phtruong         ###   ########.fr       */
+/*   Updated: 2019/02/22 16:05:38 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int main ()
 {
-	/*char str1[] = "Duplicate this sentence.";
+	char str1[] = "Duplicate";
 	char str2[] = "Copy this sentence.";
 
 	printf("String 1 is: %s\n", str1);
 	printf("String 2 is: %s\n", str2);
 	ft_strcpy(str2, str1);
-	printf("After ft_strcpy(str2, str1), string 2 now is: %s\n", str2);*/
+	printf("After ft_strcpy(str2, str1), string 2 now is: %s\n", str2);
 	//strcpy(str2, str1);
 	//printf("After strcpy(str2, str1), string 2 now is: %s\n", str2);
 	return 0;
