@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr_nchr.c                                   :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/22 15:31:51 by phtruong          #+#    #+#             */
-/*   Updated: 2019/02/24 12:52:46 by phtruong         ###   ########.fr       */
+/*   Created: 2019/02/24 14:42:04 by phtruong          #+#    #+#             */
+/*   Updated: 2019/02/24 16:17:01 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 ** DESCRIPTION
-** Uses strchr() to find the no. of delimiters c (convert to char) in a str
-** RETURN VALUES
-** No. of delimiters
+** Takes as a parameter the address of a pointer to a link and frees
+** the memory of this link and every successors of that link using
+** del and free(). Finally the pointer to the link that was just freed
+** must be set to NULL.
 */
 
 #include "libft.h"
 
-int	ft_strchr_nchr(char const *str, int c)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	int		count;
-	char	*pstr;
+	t_list	*next;
 
-	if (!*str)
-		return (0);
-	pstr = (char *)str;
-	count = 0;
-	while ((pstr = ft_strchr(pstr, (char)c)) != NULL)
+	while (*alst)
 	{
-		count++;
-		pstr++;
+		next = (*alst)->next;
+		ft_lstdelone(alst, del);
+		*alst = next;
 	}
-	return (count);
 }

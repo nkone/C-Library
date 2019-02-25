@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr_nchr.c                                   :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/22 15:31:51 by phtruong          #+#    #+#             */
-/*   Updated: 2019/02/24 12:52:46 by phtruong         ###   ########.fr       */
+/*   Created: 2019/02/24 15:30:37 by phtruong          #+#    #+#             */
+/*   Updated: 2019/02/24 15:32:24 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 ** DESCRIPTION
-** Uses strchr() to find the no. of delimiters c (convert to char) in a str
-** RETURN VALUES
-** No. of delimiters
+** Iterates through list and applies function f to each link
 */
 
 #include "libft.h"
 
-int	ft_strchr_nchr(char const *str, int c)
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	int		count;
-	char	*pstr;
-
-	if (!*str)
-		return (0);
-	pstr = (char *)str;
-	count = 0;
-	while ((pstr = ft_strchr(pstr, (char)c)) != NULL)
+	while (lst)
 	{
-		count++;
-		pstr++;
+		f(lst);
+		lst = lst->next;
 	}
-	return (count);
 }

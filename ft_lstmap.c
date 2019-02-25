@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr_nchr.c                                   :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/22 15:31:51 by phtruong          #+#    #+#             */
-/*   Updated: 2019/02/24 12:52:46 by phtruong         ###   ########.fr       */
+/*   Created: 2019/02/24 15:56:04 by phtruong          #+#    #+#             */
+/*   Updated: 2019/02/24 15:56:06 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 ** DESCRIPTION
-** Uses strchr() to find the no. of delimiters c (convert to char) in a str
-** RETURN VALUES
-** No. of delimiters
+** Iterates a list lst and applies the function f to each link to create
+** a "fresh" list using malloc() resulting from successive applications of f.
+** If the allocation fails, the function returns NULL.
 */
 
 #include "libft.h"
 
-int	ft_strchr_nchr(char const *str, int c)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	int		count;
-	char	*pstr;
+	t_list	*new_list;
 
-	if (!*str)
-		return (0);
-	pstr = (char *)str;
-	count = 0;
-	while ((pstr = ft_strchr(pstr, (char)c)) != NULL)
+	if (!lst)
+		return (NULL);
+	else
 	{
-		count++;
-		pstr++;
+		new_list = f(lst);
+		new_list->next = ft_lstmap(lst->next, f);
 	}
-	return (count);
+	return (new_list);
 }

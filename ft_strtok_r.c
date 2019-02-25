@@ -6,7 +6,7 @@
 /*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 19:46:39 by phtruong          #+#    #+#             */
-/*   Updated: 2019/02/22 20:01:31 by phtruong         ###   ########.fr       */
+/*   Updated: 2019/02/24 13:03:12 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 
 #include "libft.h"
 
-char	*ft_strtok_r (char *s, char const *delim, char **save_ps)
+char	*ft_strtok_r(char *s, char const *delim, char **save_ps)
 {
 	char	*s_end;
 

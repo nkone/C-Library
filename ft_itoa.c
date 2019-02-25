@@ -6,7 +6,7 @@
 /*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 16:26:06 by phtruong          #+#    #+#             */
-/*   Updated: 2019/02/21 20:45:23 by phtruong         ###   ########.fr       */
+/*   Updated: 2019/02/24 13:05:38 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static int	int_len(int n)
 	return (c);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	char	*str;
 	int		sign;
