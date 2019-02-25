@@ -6,7 +6,7 @@
 /*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 14:40:25 by phtruong          #+#    #+#             */
-/*   Updated: 2019/02/18 09:07:43 by phtruong         ###   ########.fr       */
+/*   Updated: 2019/02/24 13:29:53 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@
 # include "ft_ctype.h"
 # include "ft_stdlib.h"
 # include "ft_stdio.h"
+# include "ft_list.h"
 
 #endif
