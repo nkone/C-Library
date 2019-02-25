@@ -6,7 +6,7 @@
 /*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 13:20:25 by phtruong          #+#    #+#             */
-/*   Updated: 2019/02/24 16:03:00 by phtruong         ###   ########.fr       */
+/*   Updated: 2019/02/24 16:43:09 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
+	if (n == -2147483648)
+		return (ft_putstr_fd("-2147483648", fd));
 	ft_putstr_fd(ft_itoa(n), fd);
 }
