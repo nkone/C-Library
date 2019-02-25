@@ -6,7 +6,7 @@
 /*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 20:33:48 by phtruong          #+#    #+#             */
-/*   Updated: 2019/02/21 20:38:31 by phtruong         ###   ########.fr       */
+/*   Updated: 2019/02/25 08:51:05 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str_join;
 
-	if (!s1)
+	if (!s1 || !s2)
 		return (NULL);
 	str_join = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
 	if (!str_join)
