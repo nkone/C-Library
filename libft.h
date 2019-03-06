@@ -6,7 +6,7 @@
 /*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 14:40:25 by phtruong          #+#    #+#             */
-/*   Updated: 2019/03/05 18:55:21 by phtruong         ###   ########.fr       */
+/*   Updated: 2019/03/05 19:00:36 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <string.h>
-
-# include "ft_ctype.h"
-# include "ft_stdlib.h"
-# include "ft_stdio.h"
-# include "ft_list.h"
 
 typedef struct		s_list
 {
